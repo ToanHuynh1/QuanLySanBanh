@@ -53,8 +53,8 @@ void Trade::CalPrice()//true
 		price = totalhour * room.GetPricePerHour();
 	else
 		if (totalhour >= 5 && totalhour < 12)
-			price = totalhour * room.GetPricePerNight();
+			price = totalhour * room.GetPricePerHour();
 		else
-			price = (totalhour / 12) * room.GetPricePerNight() + (totalhour % 12) * room.GetPricePerHour();
+			price = (totalhour / 12) * room.GetPricePerHour() + (totalhour % 12) * room.GetPricePerHour();
 }
 

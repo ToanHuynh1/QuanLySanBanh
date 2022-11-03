@@ -346,7 +346,7 @@ Service ServiceList::fInputService(ifstream& filein, bool k)
 	if (k)
 	{
 		string temp;
-		getline(filein, temp, '\n');// loai bo ki tu xuong hang
+		getline(filein, temp, '\n'); // loai bo ki tu xuong hang
 	}
 	getline(filein, service.id, ',');
 	filein >> service.quatity;

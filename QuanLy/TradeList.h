@@ -51,6 +51,7 @@ public:
 	void printHistoryList();
 	void EarnToday();
 	void printform();
+	void BookService();
 };
 void TradeList::EarnToday()
 {
@@ -368,7 +369,7 @@ void TradeList::BooKSan()
 {
 	if (roomList->IsNoMoreEmptyRoom())
 	{
-		cout << "Hien tai khach san khong con san trong!\n";
+		cout << "Hien tai san banh khong con san trong!\n";
 		return;
 	}
 	char type;
@@ -393,7 +394,7 @@ NHAPLAILOAIPHONG:
 		}
 		if (!roomList->IsEmptyRoom(type))
 		{
-			string str = "Phong loai ";
+			string str = "San loai ";
 			str.append(type == 'N' ? "SAN 5" : "SAN 11");
 			str.append(" da het");
 			throw str;

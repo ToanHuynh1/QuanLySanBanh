@@ -10,6 +10,7 @@
 #include "Customer.h"
 #include "FullName.h"
 #include "Date.h"
+#include "RoomList.h"
 using namespace std;
 
 class CustomerList
