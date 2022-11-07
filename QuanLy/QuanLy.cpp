@@ -9,7 +9,7 @@ void Start();
 void SetColor(int color);
 void banner();
 void Option(int option, TradeList*& tradeList);
-
+Picture* scan = new Picture();
 
 int main()
 {
@@ -180,5 +180,7 @@ void banner()
 	cout << right << setw(25) << "" << "-------------------------------------------------------" << endl;
 	cout << right << setw(26) << "|" << " 20110xxx |" << left << setw(25) << " Cao Ngoc Quy" << left << setw(17) << "| 33.33%" << "|" << endl;
 	cout << right << setw(25) << "" << "-------------------------------------------------------" << endl;
-
+	cout << right << setw(25) << "" << "\n\n";
+	cout << right << setw(25) << "" << "Chao mung ban den voi san banh cua chung toi\n\n\n";
+	scan->inputPicture();
 }

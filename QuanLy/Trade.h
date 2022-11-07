@@ -5,6 +5,7 @@
 #include "RoomList.h"
 #include "Service.h"
 #include "ServiceList.h"
+#include"Picture.h"
 
 class Trade
 {
