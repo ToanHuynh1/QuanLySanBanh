@@ -51,7 +51,7 @@ public:
 	void printHistoryList();
 	void EarnToday();
 	void printform();
-	void BookService();
+	void BooKDichVu();
 };
 void TradeList::EarnToday()
 {
@@ -342,7 +342,7 @@ NHAPLAITEN:
 void TradeList::CheckSan()
 {
 	string idR;
-NHAPMAPHONG:
+NHAPMASAN:
 	try
 	{
 		cout << "Nhap ma san muon tra:";
@@ -361,7 +361,7 @@ NHAPMAPHONG:
 	{
 		cout << msg;
 		cout << "Vui long nhap lai\n";
-		goto NHAPMAPHONG;
+		goto NHAPMASAN;
 	}
 
 }
@@ -382,12 +382,12 @@ void TradeList::BooKSan()
 		trade.id = to_string(rand() % (9999999 - 1000000 + 1) + 1000000);
 	} while (IsExistId(trade.id));
 
-NHAPLAILOAIPHONG:
+NHAPLAILOAISAN:
 	try
 	{
 		cout << "Nhap loai san: ";
 		cin >> type;
-		if (!(type == 'N' || type == 'V'))
+		if (!(type == 'N' || type == 'M'))
 		{
 			cin.seekg(1);
 			throw "Loai san phai la M hoac N";
@@ -406,13 +406,13 @@ NHAPLAILOAIPHONG:
 	{
 		cout << msg << endl;
 		cout << "Vui long nhap lai" << endl;
-		goto NHAPLAILOAIPHONG;
+		goto NHAPLAILOAISAN;
 	}
 	catch (const string msg)
 	{
 		cout << msg << endl;
 		cout << "Vui long nhap lai" << endl;
-		goto NHAPLAILOAIPHONG;
+		goto NHAPLAILOAISAN;
 	}
 	trade.dateIn.AutoSetDate();
 	trade.InitDateOut();/// cho date out = 0
@@ -467,3 +467,6 @@ void TradeList::printform()
 	memset(t, '=', 171);
 	cout << left << setw(10) << "" << t << endl;
 }
+
+
+

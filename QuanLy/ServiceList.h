@@ -3,6 +3,9 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include "RoomList.h"
+#include "Service.h"
+#include "Service.h"
 using namespace std;
 #define MAX 250
 char tam[MAX];
@@ -14,6 +17,7 @@ public:
 	public:
 		Service data;
 		ServiceNode* next;
+		
 		ServiceNode(Service data)
 		{
 			this->data = data;
@@ -43,7 +47,8 @@ public:
 	bool IsEmptyService(string id);
 	bool IsHaveService(string id);
 	void UpdateState(string id, int k);
-	void UpdateServiceThem();
+	void UpdateServiceThem(string id, int k);
+	void UpdateDatDichVu(string id, int k);
 	int LaySoLuongHangDangCo(string id);
 };
 
@@ -62,11 +67,10 @@ int ServiceList::LaySoLuongHangDangCo(string id)
 	}
 }
 
-void ServiceList::UpdateServiceThem()
+void ServiceList::UpdateServiceThem(string id, int n)
 {
-	string id;
 	string nhanhieu;
-	int k, SoLuongNow;
+	int k,SoLuongNow;
 NHAPIDSERVICE:
 	try
 	{
@@ -76,6 +80,9 @@ NHAPIDSERVICE:
 		int SoLuongNow = LaySoLuongHangDangCo(id);
 		if (!(id[0] == 'T' || id[0] == 'S' && id.length() == 1 || id[0] == 'O' || id[0] == 'P'))
 			throw "ID service khong hop le";
+
+		cout << "Nhap so luong hang them:";
+		cin >> n;
 		ServiceNode* servicenode = head;
 		while (servicenode != nullptr)
 		{
@@ -94,12 +101,9 @@ NHAPIDSERVICE:
 				{
 					nhanhieu = "pepsi";
 				}
-				cout << "Nhap so luong " + nhanhieu + ":";
-				cin >> k;
-
 				cout << "So luong hien tai: " << SoLuongNow << endl;
-				cout << "So luong sau khi cap nhat: " << (SoLuongNow + k) << endl;
-				UpdateState(id, SoLuongNow + k);
+				cout << "So luong sau khi cap nhat: " << (SoLuongNow + n) << endl;
+				UpdateState(id, SoLuongNow + n);
 				fOutputServices();
 				return;
 			}
@@ -381,4 +385,79 @@ void ServiceList::fOutputServices()// true
 	}
 	fileout << temp->data.id << ',' << temp->data.quatity;
 	fileout.close();
+}
+
+
+
+void ServiceList::UpdateDatDichVu(string id, int n)
+{
+	string nhanhieu;
+	int k, SoLuongNow;
+	RoomList* roomList = new RoomList();
+
+NHAPIDSERVICE:
+	try
+	{
+		cout << "Nhap ID cua service muon dat hang: ";
+		cin >> id;
+
+		int SoLuongNow = LaySoLuongHangDangCo(id);
+		if (!(id[0] == 'T' || id[0] == 'S' && id.length() == 1 || id[0] == 'O' || id[0] == 'P'))
+			throw "ID service khong hop le";
+
+		cout << "So luong hien tai: " << SoLuongNow << endl;
+
+NHAPSOLUONGN:
+
+		try
+		{
+
+			cout << "Nhap so luong: ";
+			cin >> n;
+
+			if (SoLuongNow < n)
+			{
+				throw "So luong vuot qua so luong dang co";
+			}
+		}
+		catch (const char* msg)
+		{
+				cout << msg << endl;
+				goto NHAPSOLUONGN;
+		}
+		ServiceNode* servicenode = head;
+		while (servicenode != nullptr)
+		{
+			if (servicenode->data.id.compare(id) == 0)
+			{
+				if (id[0] == 'T') nhanhieu = "tra da";
+				else if (id[0] == 'S')
+				{
+					nhanhieu = "suoi";
+				}
+				else if (id[0] == 'O')
+				{
+					nhanhieu = "o long";
+				}
+				else
+				{
+					nhanhieu = "pepsi";
+				}
+
+				cout << "So luong sau khi cap nhat: " << (SoLuongNow - n) << endl;
+				UpdateState(id, (SoLuongNow - n));
+				fOutputServices();
+				return;
+			}
+			servicenode = servicenode->next;
+		}
+		throw "Khong co id dich vu";
+	}
+	catch (const char* msg)
+	{
+		cout << msg << endl;
+		cout << "Vui long nhap lai ID dich vu" << endl;
+		goto NHAPIDSERVICE;
+	}
+	
 }

@@ -9,6 +9,8 @@ void Start();
 void SetColor(int color);
 void banner();
 void Option(int option, TradeList*& tradeList);
+
+
 int main()
 {
 	banner();
@@ -20,6 +22,7 @@ void Start()
 	system("pause");
 	system("cls");
 	TradeList* tradeList = new TradeList();
+	
 	Menu(tradeList);
 	SetColor(13);
 	int option;
@@ -129,13 +132,15 @@ void Option(int option, TradeList*& tradeList)
 	case 15:
 		tradeList->serviceList->PrintServiceList();
 		break;
+	case 16:
+		break;
 	case 0:
 		tradeList->DetroyTradeList();
 		cout << "Da thoat chuong trinh!! Cam on quy khach da su dung dich vu cua chung toi!!" << endl;
 		system("pause");
 		break;
 	default:
-		cout << "Vui long nhap cac so tu 0->14" << endl;
+		cout << "Vui long nhap cac so tu 0->17" << endl;
 		break;
 	}
 }

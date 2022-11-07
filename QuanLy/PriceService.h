@@ -82,7 +82,7 @@ NHAPGIAOLONG:
 NHAPGIAPEPSI:
 	try
 	{
-		cout << "Gia pepsi theo moi dem ";
+		cout << "Gia pepsi ";
 		cin >> prPepsi;
 		if (cin.fail())
 		{

@@ -3,14 +3,18 @@
 #include "Date.h"
 #include "CustomerList.h"
 #include "RoomList.h"
+#include "Service.h"
+#include "ServiceList.h"
 
 class Trade
 {
 private:
 	int price = 0;
+	int tiendichvu;
 public:
 	string id;
 	Room room;
+	Service service;
 	Customer customer;
 	Date dateIn;
 	Date dateOut;
@@ -38,6 +42,8 @@ int Trade::GetPrice()
 	CalPrice();
 	return price;
 }
+
+
 void Trade::CalPrice()//true
 {
 	int totalhour;
