@@ -163,11 +163,12 @@ public:
 	{
 		ServiceNode* temp = this->head;
 		cout << "Thong tin cua tung dich vu" << endl;
-		memset(tam, '=', 38);
+		memset(tam, '=', 50);
 		cout << right << setw(60) << "" << tam << endl;
 		cout << right << setw(60) << "" << "|" << left << setw(10) << " Ma dich vu";
 		cout << "|" << left << setw(12) << " Ten dich vu";
-		cout << "|" << left << setw(12) << " Trang thai" << "|" << endl;
+		cout << "|" << left << setw(12) << " Trang thai" ;
+		cout << right << setw(0) << "|" << " So luong  " << "|" << endl;
 		memset(tam, '=', 38);
 		cout << right << setw(60) << "" << tam << endl;
 		while (temp != nullptr)
@@ -177,41 +178,45 @@ public:
 			{
 				cout << "|  " << left << setw(10) << "Nuoc suoi";
 				if (temp->data.quatity > 0)
-					cout << "|  " << left << setw(10) << "Con hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Con hang" << "|"<<left<<setw(6) <<"      " << temp->data.quatity << "    |" << endl;
 				else
-					cout << "|  " << left << setw(10) << "Het hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Het hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "     |" << endl;
 			}
 			else if (temp->data.id[0] == 'T')
 			{
 				cout << "|  " << left << setw(10) << "Tra da";
 				if (temp->data.quatity > 0)
-					cout << "|  " << left << setw(10) << "Con hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Con hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "    |" << endl;
 				else
-					cout << "|  " << left << setw(10) << "Het hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Het hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "     |" << endl;
 			}
 			else if (temp->data.id[0] == 'O')
 			{
 				cout << "|  " << left << setw(10) << "Olong";
 				if (temp->data.quatity > 0)
-					cout << "|  " << left << setw(10) << "Con hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Con hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "    |" << endl;
 				else
-					cout << "|  " << left << setw(10) << "Het hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Het hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "    |" << endl;
 			}
 			else
 			{
 				cout << "|  " << left << setw(10) << "Pepsi";
 				if (temp->data.quatity > 0)
-					cout << "|  " << left << setw(10) << "Con hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Con hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "     |" << endl;
 				else
-					cout << "|  " << left << setw(10) << "Het hang" << "|" << endl;
+					cout << "|  " << left << setw(10) << "Het hang" << "|" << left << setw(6) << "      " << temp->data.quatity << "     |" << endl;
 			}
+			
 			memset(tam, '-', 38);
 			cout << right << setw(60) << "" << tam << endl;
+
+
+			
 			temp = temp->next;
 		}
 		memset(t, NULL, MAX);
 	}
-	void PrintFullServiceList()//true
+	void PrintFullServiceList()
 	{
 		ServiceNode* temp = this->head;
 		cout << "Thong tin cua tung dich vu trong" << endl;
@@ -264,6 +269,7 @@ public:
 			}
 			temp = temp->next;
 		}
+		
 		memset(t, NULL, MAX);
 	}
 	bool IsExistService(string id)//true
@@ -388,11 +394,20 @@ public:
 
 			cout << "So luong hien tai khi chua dat hang: " << SoLuongNow << endl;
 
-			do
+			if (SoLuongNow <= 0)
 			{
-				cout << "Nhap so luong: ";
-				cin >> n;
-			} while (n < SoLuongNow);
+				cout << "Dich vu da het hang" << endl;
+				goto NHAPIDSERVICE;
+			}
+
+			cout << "Nhap so luong muon dat:";
+			cin >> n;
+
+			if (n > SoLuongNow)
+			{
+				cout << "So luong vuot qua so luong co trong kho" << endl;
+				goto NHAPIDSERVICE;
+			}
 			
 			if (!(id[0] == 'T' || id[0] == 'S' && id.length() == 1 || id[0] == 'O' || id[0] == 'P'))
 				throw "ID service khong hop le";

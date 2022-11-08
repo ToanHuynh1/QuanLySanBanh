@@ -69,7 +69,7 @@ public:
 		}
 		return customer;
 	}
-	void DetroyCustomerList()//true
+	void DetroyCustomerList()
 	{
 		CustomerNode* temp = this->head;
 		while (this->head != nullptr)
@@ -93,7 +93,7 @@ public:
 		}
 		return false;
 	}
-	Customer InputCustomer() //// true
+	Customer InputCustomer() 
 	{
 		Customer customer;
 	NHAPLAICMND:

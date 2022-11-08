@@ -184,5 +184,5 @@ void banner()
 	cout << right << setw(25) << "" << "-------------------------------------------------------" << endl;
 	cout << right << setw(25) << "" << "\n\n";
 	cout << right << setw(25) << "" << "\tCHAO MUNG BAN DEN VOI SAN BANH CUA CHUNG TOI\n\n\n";
-	scan->inputPicture();
+	/*scan->inputPicture();*/
 }
