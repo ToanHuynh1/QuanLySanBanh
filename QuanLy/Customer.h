@@ -16,26 +16,25 @@ public:
 	string sex;
 	string phoneNumber;
 	string address;
-	void printCustomer();
-	void fInputCustomer(ifstream& filein);
+	void printCustomer()
+	{
+		cout << "| " << left << setw(14) << id << "| ";
+		fullName.printName();
+		cout << left << setw(15) << phoneNumber << "| ";
+		dateOfBirth.printDate();
+		cout << left << setw(8) << sex << "| ";
+		cout << left << setw(51) << address << "|";
+	}
+	void fInputCustomer(ifstream& filein)
+	{
+		getline(filein, id, ';');
+		fullName.fInputFullName(filein);
+		dateOfBirth.fDate(filein);
+		filein.seekg(1, 1);
+		getline(filein, sex, ';');
+		getline(filein, phoneNumber, ';');
+		getline(filein, address, '\n');
+	}
 };
-void Customer::fInputCustomer(ifstream& filein)//true
-{
-	getline(filein, id, ';');
-	fullName.fInputFullName(filein);
-	dateOfBirth.fDate(filein);
-	filein.seekg(1, 1);
-	getline(filein, sex, ';');
-	getline(filein, phoneNumber, ';');
-	getline(filein, address, '\n');
-}
-void Customer::printCustomer()
-{
-	cout << "| " << left << setw(14) << id << "| ";
-	fullName.printName();
-	cout << left << setw(15) << phoneNumber << "| ";
-	dateOfBirth.printDate();
-	cout << left << setw(8) << sex << "| ";
-	cout << left << setw(51) << address << "|";
-}
+
 

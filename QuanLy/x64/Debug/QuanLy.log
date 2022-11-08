@@ -8,6 +8,7 @@ D:\QuanLySanBanh\QuanLy\ServiceList.h(395,9): warning C4101: 'SoLuongNow': unref
 D:\QuanLySanBanh\QuanLy\TradeList.h(246,7): warning C4101: 'd': unreferenced local variable
 D:\QuanLySanBanh\QuanLy\TradeList.h(351,10): warning C4566: character represented by universal-character-name '\u1EB7' cannot be represented in the current code page (1252)
 D:\QuanLySanBanh\QuanLy\TradeList.h(381,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\QuanLySanBanh\QuanLy\RoomList.h(146): warning C4715: 'RoomList::GetFirstEmptyRoom': not all control paths return a value
+D:\QuanLySanBanh\QuanLy\QuanLy.cpp(136,7): warning C4101: 'n': unreferenced local variable
 D:\QuanLySanBanh\QuanLy\ServiceList.h(68): warning C4715: 'ServiceList::LaySoLuongHangDangCo': not all control paths return a value
+D:\QuanLySanBanh\QuanLy\RoomList.h(128): warning C4715: 'RoomList::GetFirstEmptyRoom': not all control paths return a value
   QuanLy.vcxproj -> D:\QuanLySanBanh\x64\Debug\QuanLy.exe

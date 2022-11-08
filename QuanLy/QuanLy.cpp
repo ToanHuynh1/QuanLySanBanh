@@ -55,8 +55,8 @@ void Menu(TradeList* tradeList)
 	SetColor(3);
 	cout << right << setw(25) << "" << "*================= QUAN LY SAN BANH ==================*" << endl;
 	cout << right << setw(26) << "|" << right << setw(55) << "|" << endl;
-	cout << right << setw(25) << "" << "|\t1. Khach hang dat san" << right << setw(28) << "|" << "\tGia san 5/SANG: " << tradeList->price->perHourN << endl;
-	cout << right << setw(25) << "" << "|\t2. Khach hang tra san " << right << setw(27) << "|" << "\tGia san 11/SANG: " << tradeList->price->perHourM << endl;
+	cout << right << setw(25) << "" << "|\t1. Khach hang dat san" << right << setw(28) << "|" << "\tGia san 5 (N)/SANG: " << tradeList->price->perHourN << endl;
+	cout << right << setw(25) << "" << "|\t2. Khach hang tra san " << right << setw(27) << "|" << "\tGia san 11 (M)/SANG: " << tradeList->price->perHourM << endl;
 	cout << right << setw(25) << "" << "|\t3. Tim kiem khach hang" << right << setw(27) << "|" << endl;
 	cout << right << setw(25) << "" << "|\t4. Tim kiem khach hang dang muon san" << right << setw(13) << "|" << endl;
 	cout << right << setw(25) << "" << "|\t5. Danh sach khach hang" << right << setw(26) << "|" << endl;
@@ -133,6 +133,8 @@ void Option(int option, TradeList*& tradeList)
 		tradeList->serviceList->PrintServiceList();
 		break;
 	case 16:
+		int n;
+		tradeList->serviceList->UpdateDatDichVu();
 		break;
 	case 0:
 		tradeList->DetroyTradeList();
@@ -181,6 +183,6 @@ void banner()
 	cout << right << setw(26) << "|" << " 20110xxx |" << left << setw(25) << " Cao Ngoc Quy" << left << setw(17) << "| 33.33%" << "|" << endl;
 	cout << right << setw(25) << "" << "-------------------------------------------------------" << endl;
 	cout << right << setw(25) << "" << "\n\n";
-	cout << right << setw(25) << "" << "Chao mung ban den voi san banh cua chung toi\n\n\n";
+	cout << right << setw(25) << "" << "\tCHAO MUNG BAN DEN VOI SAN BANH CUA CHUNG TOI\n\n\n";
 	scan->inputPicture();
 }
