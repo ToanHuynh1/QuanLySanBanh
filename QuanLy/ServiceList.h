@@ -383,10 +383,17 @@ public:
 		{
 			cout << "Nhap ID cua service muon dat hang: ";
 			cin >> id;
-
-			cout << "Nhap so luong: ";
-			cin >> n;
+			
 			int SoLuongNow = LaySoLuongHangDangCo(id);
+
+			cout << "So luong hien tai khi chua dat hang: " << SoLuongNow << endl;
+
+			do
+			{
+				cout << "Nhap so luong: ";
+				cin >> n;
+			} while (n < SoLuongNow);
+			
 			if (!(id[0] == 'T' || id[0] == 'S' && id.length() == 1 || id[0] == 'O' || id[0] == 'P'))
 				throw "ID service khong hop le";
 

@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <fstream>
 using namespace std;
-#define MAX 300
+#define MAX 1000
 char t[MAX];
 class RoomList
 {

@@ -53,11 +53,7 @@ public:
 		filein.close();
 		fileout.close();
 	}
-	inline bool IsExistCustomer()
-	{
 
-		return false;
-	}
 	Customer ReturnById(string id)
 	{
 		Customer customer;
@@ -319,55 +315,7 @@ public:
 		}
 		memset(t, NULL, MAX);
 	}
-	void DeleteById(string id)//xóa 1
-	{
-		CustomerNode* pDel = head; // tạo một node pDel để xóa
-	//Nếu pDel == Null thì danh sách rỗng
-		if (pDel == nullptr) {
-			cout << "Danh sach rong!!!";
-		}
-		//ngược lại thì xét điều kiện
-		else {
-			CustomerNode* pPre = nullptr;
-			//dùng vòng lặp while để tìm ra pDel và pPre (vị trí đứng trước pDel)
-			while (pDel != nullptr) {
-				if (pDel->data.id.compare(id) == 0) {
-					{
-						break;
-					}
-				}
-				pPre = pDel;
-				pDel = pDel->next;
-			}
-			//Nếu pDel == null tức là không tìm thấy số cần xóa
-			if (pDel == nullptr) {
-				cout << "Khong tim thay ma khach hang can xoa";
-			}
-			// Ngược lại tiếp tục xét điều kiện
-			else {
-				// Nếu pDel == list.pHead, tức là số cần xóa ở đầu danh sách
-				if (pDel == head) {
-					head = head->next;
-					pDel->next = nullptr;
-					delete pDel;
-					pDel = nullptr;
-				}
-				//Nếu pDel == list.pTail, tức là số cần xóa ở cuối danh sách
-				else if (pDel->next == nullptr) {
-					pPre->next = nullptr;
-					delete pDel;
-					pDel = nullptr;
-				}
-				// và trường hợp cuối cùng số muốn xóa nằm ở giữa danh sách
-				else {
-					pPre->next = pDel->next;
-					pDel->next = nullptr;
-					delete pDel;
-					pDel = nullptr;
-				}
-			}
-		}
-	}
+	
 	bool IsExistId(string id)
 	{
 		CustomerNode* temp = head;

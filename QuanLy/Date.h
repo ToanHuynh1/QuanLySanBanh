@@ -19,12 +19,7 @@ public:
 		}
 		return 365 * year + year / 4 - year / 100 + year / 400 + (153 * month - 457) / 5 + day - 306;
 	}
-	bool  isEqualDate(Date date)
-	{
-		if (date.day == day && date.month == month && date.year == year)
-			return true;
-		return false;
-	}
+
 	void  fOuputDateTime(ofstream& fileout, Date date)
 	{
 		fileout << date.hour << ":" << date.minute << ":" << date.second << ";"

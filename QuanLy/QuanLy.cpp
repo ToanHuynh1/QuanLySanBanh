@@ -55,8 +55,8 @@ void Menu(TradeList* tradeList)
 	SetColor(3);
 	cout << right << setw(25) << "" << "*================= QUAN LY SAN BANH ==================*" << endl;
 	cout << right << setw(26) << "|" << right << setw(55) << "|" << endl;
-	cout << right << setw(25) << "" << "|\t1. Khach hang dat san" << right << setw(28) << "|" << "\tGia san 5 (N)/SANG: " << tradeList->price->perHourN << endl;
-	cout << right << setw(25) << "" << "|\t2. Khach hang tra san " << right << setw(27) << "|" << "\tGia san 11 (M)/SANG: " << tradeList->price->perHourM << endl;
+	cout << right << setw(25) << "" << "|\t1. Khach hang dat san" << right << setw(28) << "|" << "\tGia san 5 (N): " << tradeList->price->perHourN << endl;
+	cout << right << setw(25) << "" << "|\t2. Khach hang tra san " << right << setw(27) << "|" << "\tGia san 11 (M): " << tradeList->price->perHourM << endl;
 	cout << right << setw(25) << "" << "|\t3. Tim kiem khach hang" << right << setw(27) << "|" << endl;
 	cout << right << setw(25) << "" << "|\t4. Tim kiem khach hang dang muon san" << right << setw(13) << "|" << endl;
 	cout << right << setw(25) << "" << "|\t5. Danh sach khach hang" << right << setw(26) << "|" << endl;
