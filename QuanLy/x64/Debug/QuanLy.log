@@ -1,14 +1,14 @@
 ﻿  QuanLy.cpp
-D:\QuanLySanBanh\QuanLy\ServiceList.h(10,1): warning C4005: 'MAX': macro redefinition
-D:\QuanLySanBanh\QuanLy\RoomList.h(7): message : see previous definition of 'MAX'
-D:\QuanLySanBanh\QuanLy\ServiceList.h(55,7): warning C4101: 'k': unreferenced local variable
-D:\QuanLySanBanh\QuanLy\ServiceList.h(55,10): warning C4101: 'SoLuongNow': unreferenced local variable
-D:\QuanLySanBanh\QuanLy\ServiceList.h(383,7): warning C4101: 'k': unreferenced local variable
-D:\QuanLySanBanh\QuanLy\ServiceList.h(383,10): warning C4101: 'SoLuongNow': unreferenced local variable
-D:\QuanLySanBanh\QuanLy\TradeList.h(335,11): warning C4566: character represented by universal-character-name '\u1EB7' cannot be represented in the current code page (1252)
-D:\QuanLySanBanh\QuanLy\TradeList.h(230,8): warning C4101: 'd': unreferenced local variable
-D:\QuanLySanBanh\QuanLy\TradeList.h(365,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\QuanLySanBanh\QuanLy\QuanLy.cpp(136,7): warning C4101: 'n': unreferenced local variable
-D:\QuanLySanBanh\QuanLy\RoomList.h(128): warning C4715: 'RoomList::GetFirstEmptyRoom': not all control paths return a value
-D:\QuanLySanBanh\QuanLy\ServiceList.h(50): warning C4715: 'ServiceList::LaySoLuongHangDangCo': not all control paths return a value
-  QuanLy.vcxproj -> D:\QuanLySanBanh\x64\Debug\QuanLy.exe
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\ServiceList.h(10,1): warning C4005: 'MAX': macro redefinition
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\RoomList.h(7): message : see previous definition of 'MAX'
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\ServiceList.h(55,7): warning C4101: 'k': unreferenced local variable
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\ServiceList.h(55,10): warning C4101: 'SoLuongNow': unreferenced local variable
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\ServiceList.h(383,7): warning C4101: 'k': unreferenced local variable
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\ServiceList.h(383,10): warning C4101: 'SoLuongNow': unreferenced local variable
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\TradeList.h(335,11): warning C4566: character represented by universal-character-name '\u1EB7' cannot be represented in the current code page (1252)
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\TradeList.h(230,8): warning C4101: 'd': unreferenced local variable
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\TradeList.h(365,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\QuanLy.cpp(137,7): warning C4101: 'n': unreferenced local variable
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\RoomList.h(128): warning C4715: 'RoomList::GetFirstEmptyRoom': not all control paths return a value
+C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\QuanLy\ServiceList.h(50): warning C4715: 'ServiceList::LaySoLuongHangDangCo': not all control paths return a value
+  QuanLy.vcxproj -> C:\Users\tranq\OneDrive\Máy tính\QuannLy\QuanLySanBanh\x64\Debug\QuanLy.exe

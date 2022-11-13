@@ -272,7 +272,7 @@ public:
 		
 		memset(t, NULL, MAX);
 	}
-	bool IsExistService(string id)//true
+	bool IsExistService(string id)
 	{
 		ServiceNode* temp = this->head;
 		while (temp != nullptr)
@@ -285,7 +285,7 @@ public:
 		}
 		return false;
 	}
-	int GetMaxService() //So luong dich vu
+	int GetMaxService() 
 	{
 		int count = 0;
 		ServiceNode* temp = this->head;
@@ -310,7 +310,7 @@ public:
 		}
 		this->fOutputServices();
 	}
-	void DetroyServiceList()//true
+	void DetroyServiceList()
 	{
 		ServiceNode* temp = this->head;
 		while (this->head != nullptr)
@@ -338,7 +338,7 @@ public:
 		if (k)
 		{
 			string temp;
-			getline(filein, temp, '\n'); // loai bo ki tu xuong hang
+			getline(filein, temp, '\n'); 
 		}
 		getline(filein, service.id, ',');
 		filein >> service.quatity;
@@ -361,7 +361,7 @@ public:
 	}
 
 
-	void fOutputServices()// true
+	void fOutputServices()
 	{
 		ofstream fileout;
 		fileout.open("DANHSACHDICHVU.TXT", ios::out);

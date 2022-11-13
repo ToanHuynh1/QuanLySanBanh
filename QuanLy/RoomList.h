@@ -201,7 +201,7 @@ public:
 		}
 		memset(t, NULL, MAX);
 	}
-	bool  IsExistRoom(string id)//true
+	bool  IsExistRoom(string id)
 	{
 		RoomNode* temp = this->head;
 		while (temp != nullptr)
@@ -239,7 +239,7 @@ public:
 		}
 		this->fOutputRooms();
 	}
-	void  DetroyRoomList()//true
+	void  DetroyRoomList()
 	{
 		RoomNode* temp = this->head;
 		while (this->head != nullptr)
@@ -260,7 +260,7 @@ public:
 		}
 		return true;
 	}
-	void  UpdateMaxRoom()//true khi xay them phong
+	void  UpdateMaxRoom()// khi xay them phong
 	{
 		int n;
 	NHAPN:
@@ -292,7 +292,7 @@ public:
 		}
 		this->maxRoom += n;
 	}
-	void  InputRoom()//true
+	void  InputRoom()
 	{
 		Room room;
 	NHAPIDPHONG:
@@ -326,7 +326,7 @@ public:
 		filein >> room.state;
 		return room;
 	}
-	void  fOutputRooms()// true
+	void  fOutputRooms()
 	{
 		ofstream fileout;
 		fileout.open("DANHSACHSAN.TXT", ios::out);

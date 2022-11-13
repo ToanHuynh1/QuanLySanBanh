@@ -13,7 +13,7 @@ public:
 		getline(filein, lastName, ';');
 		getline(filein, firstName, ';');
 	}
-	bool   IsTrueLastName()
+	bool   CheckLastName()
 	{
 		if (lastName.empty())
 			return false;
@@ -27,7 +27,7 @@ public:
 		}
 		return true;
 	}
-	bool   IsTrueFirstName()
+	bool   CheckFirstName()
 	{
 		if (firstName[0] < 32)
 			return false;
@@ -38,7 +38,7 @@ public:
 		}
 		return true;
 	}
-	void   printName()
+	void   printFullName()
 	{
 		string temp = lastName + " " + firstName;
 		cout << left << setw(32) << temp << "| ";

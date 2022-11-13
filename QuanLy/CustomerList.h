@@ -48,7 +48,7 @@ public:
 		}
 		fileout << data.id << ";" << data.fullName.lastName << ";" << data.fullName.firstName << ";";
 		data.dateOfBirth.fOuputDate(fileout, data.dateOfBirth);
-		fileout << ";" << data.sex << ";" << data.phoneNumber << ";";
+		fileout << ";" << data.sex << ";" << data.phone << ";";
 		fileout << data.address;
 		filein.close();
 		fileout.close();
@@ -127,10 +127,9 @@ public:
 		try
 		{
 			cout << "Nhap ho va ten lot khach hang: ";
-			//cin.ignore();
 			cin.seekg(1);
 			getline(cin, customer.fullName.lastName);
-			if (customer.fullName.IsTrueLastName() == false)
+			if (customer.fullName.CheckLastName() == false)
 				throw "Ho khong hop le!";
 			transform(customer.fullName.lastName.begin(), customer.fullName.lastName.end(), customer.fullName.lastName.begin(), toupper);
 		}
@@ -144,9 +143,8 @@ public:
 		try
 		{
 			cout << "Nhap ten khach hang: ";
-			//cin.ignore();
 			getline(cin, customer.fullName.firstName);
-			if (customer.fullName.IsTrueFirstName() == false)
+			if (customer.fullName.CheckFirstName() == false)
 				throw "Ten khong hop le!";
 			transform(customer.fullName.firstName.begin(), customer.fullName.firstName.end(), customer.fullName.firstName.begin(), toupper);
 		}
@@ -223,7 +221,7 @@ public:
 				cout << "Vui long nhap lai\n";
 				goto NHAPNAMSINH;
 			}
-			if (!customer.dateOfBirth.IsTrueDate())
+			if (!customer.dateOfBirth.CheckDate())
 			{
 				throw "Ngay thang nam khong hop le\n";
 			}
@@ -255,10 +253,10 @@ public:
 		try
 		{
 			cout << "Nhap so dien thoai khach hang: ";
-			cin >> customer.phoneNumber;
-			for (int i = 0; i < customer.phoneNumber.length(); i++)
+			cin >> customer.phone;
+			for (int i = 0; i < customer.phone.length(); i++)
 			{
-				if (!(customer.phoneNumber[i] >= '0' && customer.phoneNumber[i] <= '9'))
+				if (!(customer.phone[i] >= '0' && customer.phone[i] <= '9'))
 					throw "So dien thoai khong hop le!";
 			}
 		}
@@ -278,7 +276,6 @@ public:
 	{
 		Customer customer;
 		ifstream filein;
-		//bool k = false;
 		filein.open("KHACHHANG.TXT", ios::in);
 
 		if (filein.fail())
@@ -288,13 +285,12 @@ public:
 		while (!filein.eof())
 		{
 			customer.fInputCustomer(filein);
-			//k = true;
 			this->AddHead(customer);
 		}
 		filein.close();
 	}
 
-	void printList()///
+	void printList()
 	{
 		cout << endl;
 		if (this->head == nullptr)
@@ -302,15 +298,15 @@ public:
 			cout << "Danh sach rong\n";
 			return;
 		}
-		PrintForm();
+		Form();
 		CustomerNode* temp = head;
 		while (temp != nullptr)
 		{
 			cout << left << setw(20) << "";
-			temp->data.printCustomer();
+			temp->data.printACustomer();
 			cout << endl;
-			memset(t, '-', 144);
-			cout << left << setw(20) << "" << t << endl;
+			memset(t, '-', 108);
+			cout << left << setw(21) << "" << t << endl;
 			temp = temp->next;
 		}
 		memset(t, NULL, MAX);
@@ -336,7 +332,7 @@ public:
 		{
 			cout << "Nhap ten khach hang: ";
 			cin >> fname.firstName;
-			if (fname.IsTrueFirstName() == false)
+			if (fname.CheckFirstName() == false)
 				throw "Ten khong hop le!";
 			transform(fname.firstName.begin(), fname.firstName.end(), fname.firstName.begin(), toupper);
 		}
@@ -353,13 +349,13 @@ public:
 			if (fname.firstName.compare(temp->data.fullName.firstName) == 0)
 			{
 				if (!check)
-					PrintForm();
+					Form();
 				check = true;
 				cout << left << setw(20) << "";
-				temp->data.printCustomer();
+				temp->data.printACustomer();
 				cout << endl;
-				memset(t, '-', 144);
-				cout << left << setw(20) << "" << t << endl;
+				memset(t, '-', 108);
+				cout << left << setw(21) << "" << t << endl;
 			}
 			temp = temp->next;
 		}
@@ -380,17 +376,21 @@ public:
 			this->head = customerNode;
 		}
 	}
-
-	void PrintForm()
+	void Form()
 	{
-		memset(t, '=', 144);
-		cout << left << setw(20) << "" << t << endl;
-		cout << left << setw(20) << "" << "|" << left << setw(15) << "   CMND/CCCD" << "|" << left << setw(24) <<
-			"\t\tHo va Ten" << "|" << left << setw(16) << "  So Dien Thoai";
+
+		
+		memset(t, '_', 108);
+		cout << left << setw(21) << "" << t << endl;
+		cout << left << setw(20) << "" << "|" << left << setw(15) << " CMND/CCCD" << "|" << left << setw(33) <<
+			"  Ho va Ten" << "|" << left << setw(16) << "  So Dien Thoai";
 		cout << "|" << left << setw(12) << " Ngay Sinh" << "|" << left << setw(9) << "Gioi Tinh" << "|" <<
-			left << setw(52) << "\t      Dia Chi" << "|" << endl;
-		memset(t, '=', 144);
-		cout << left << setw(20) << "" << t << endl;
+			left << setw(18) << "\t    Dia Chi" << "|" << endl;
+		memset(t, '=', 108);
+		cout << left << setw(21) << "" << t << endl;
+		
+		
+
 	}
 
 };

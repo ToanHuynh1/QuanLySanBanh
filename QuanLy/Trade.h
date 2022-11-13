@@ -42,7 +42,7 @@ public:
 	}
 
 
-	void CalPrice()//true
+	void CalPrice()
 	{
 		int totalhour;
 		dateOut.AutoSetDate();

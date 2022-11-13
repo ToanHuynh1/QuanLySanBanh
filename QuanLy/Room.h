@@ -4,11 +4,11 @@
 using namespace std;
 class Room
 {
-private:
-	Price price;
-public:
-	string id;
-	int state;
+	private:
+		Price price;
+	public:
+		string id;
+		int state;
 
 
 	int GetPricePerHour()

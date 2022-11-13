@@ -9,9 +9,6 @@ public:
 	int day;
 	int month;
 	int year;
-
-
-
 	int  SumDate() {
 		if (month < 3) {
 			year--;
@@ -30,7 +27,7 @@ public:
 	{
 		fileout << date.day << "/" << date.month << "/" << date.year;
 	}
-	void  fDate(ifstream& filein)//true
+	void  fDate(ifstream& filein)
 	{
 		filein >> day;
 		filein.seekg(1, 1);
@@ -38,7 +35,7 @@ public:
 		filein.seekg(1, 1);
 		filein >> year;
 	}
-	void  fDateTime(ifstream& filein)//true
+	void  fDateTime(ifstream& filein)
 	{
 		filein >> hour;
 		filein.seekg(1, 1);
@@ -52,7 +49,7 @@ public:
 		filein.seekg(1, 1);
 		filein >> year;
 	}
-	bool  IsLeapYear()
+	bool  CheckLeapYear()
 	{
 		if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0)
 			return true;
@@ -64,24 +61,20 @@ public:
 			return 30;
 		else
 			if (month == 2)
-				if (IsLeapYear())
+				if (CheckLeapYear())
 					return 29;
 				else
 					return 28;
 			else
 				return 31;
 	}
-	bool  IsTrueDate()
+	bool  CheckDate()
 	{
 		if (day > 0 && day <= DateInMonth() && month > 0 && month <= 12 && year > 0)
 			return  true;
 		return false;
 	}
-	bool  IsTrueTime()
-	{
-		return (hour >= 0 && hour < 24 && minute >= 0 && minute < 60 && second >= 0 && second < 60);
-	}
-	void  printDateTime()//true
+	void  printDateTime()
 	{
 		string temp = to_string(hour) + ":" + to_string(minute) + ":" + to_string(second)
 			+ " " + to_string(day) + "/" + to_string(month) + "/" + to_string(year);
