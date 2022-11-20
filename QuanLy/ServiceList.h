@@ -59,6 +59,8 @@ public:
 			cout << "Nhap ID cua service sau khi duoc them hang: ";
 			cin >> id;
 
+
+			transform(id.begin(), id.end(), id.begin(), toupper);
 			int SoLuongNow = LaySoLuongHangDangCo(id);
 			if (!(id[0] == 'T' || id[0] == 'S' && id.length() == 1 || id[0] == 'O' || id[0] == 'P'))
 				throw "ID service khong hop le";
