@@ -35,7 +35,7 @@ public:
 	NHAPIDPHONGP:
 		try
 		{
-			cout << "Nhap ID cua san sau khi don: ";
+			cout << "Nhap ID cua san sau khi bao tri: ";
 			cin >> id;
 			if (!(id[0] == 'M' || id[0] == 'N' && id.length() == 4))
 				throw "ID san khong hop le";
@@ -145,16 +145,24 @@ public:
 				cout << "|  " << left << setw(10) << "SAN 11";
 				if (temp->data.state == 0)
 					cout << "|  " << left << setw(10) << "TRONG" << "|" << endl;
-				else
+				else if (temp->data.state == 1)
 					cout << "|  " << left << setw(10) << "DAY" << "|" << endl;
+				else
+				{
+					cout << "|  " << left << setw(10) << "BAO TRI" << "|" << endl;
+				}
 			}
 			else
 			{
 				cout << "|  " << left << setw(10) << "SAN 5";
 				if (temp->data.state == 0)
 					cout << "|  " << left << setw(10) << "TRONG" << "|" << endl;
-				else
+				else if (temp->data.state == 1)
 					cout << "|  " << left << setw(10) << "DAY" << "|" << endl;
+				else
+				{
+					cout << "|  " << left << setw(10) << "BAO TRI" << "|" << endl;
+				}
 			}
 			memset(t, '-', 38);
 			cout << right << setw(60) << "" << t << endl;
@@ -162,7 +170,7 @@ public:
 		}
 		memset(t, NULL, MAX);
 	}
-	void  PrintEmptyRoomList()//true
+	void  PrintEmptyRoomList()
 	{
 		RoomNode* temp = this->head;
 		cout << "Thong tin cua tung san trong" << endl;
@@ -183,16 +191,24 @@ public:
 					cout << "|  " << left << setw(10) << "SAN 11";
 					if (temp->data.state == 0)
 						cout << "|  " << left << setw(10) << "TRONG" << "|" << endl;
-					else
+					else if (temp->data.state == 1)
 						cout << "|  " << left << setw(10) << "DAY" << "|" << endl;
+					else
+					{
+						cout << "|  " << left << setw(10) << "BAO TRI" << "|" << endl;
+					}
 				}
 				else
 				{
 					cout << "|  " << left << setw(10) << "SAN 5";
 					if (temp->data.state == 0)
 						cout << "|  " << left << setw(10) << "TRONG" << "|" << endl;
-					else
+					else if (temp->data.state == 1)
 						cout << "|  " << left << setw(10) << "DAY" << "|" << endl;
+					else
+					{
+						cout << "|  " << left << setw(10) << "BAO TRI" << "|" << endl;
+					}
 				}
 				memset(t, '-', 38);
 				cout << right << setw(60) << "" << t << endl;
@@ -260,7 +276,7 @@ public:
 		}
 		return true;
 	}
-	void  UpdateMaxRoom()// khi xay them phong
+	void  UpdateMaxRoom()
 	{
 		int n;
 	NHAPN:
@@ -320,7 +336,7 @@ public:
 		if (k)
 		{
 			string temp;
-			getline(filein, temp, '\n');// loai bo ki tu xuong hang
+			getline(filein, temp, '\n');
 		}
 		getline(filein, room.id, ',');
 		filein >> room.state;

@@ -4,6 +4,7 @@
 #include "CustomerList.h"
 #include "TradeList.h"
 #include "ServiceList.h"
+#include "Trade.h"
 void Menu(TradeList* tradeList);
 void Start();
 void SetColor(int color);
@@ -53,7 +54,7 @@ void Start()
 void Menu(TradeList* tradeList)
 {
 	cout << "\n";
-	SetColor(3);
+	SetColor(126);
 	cout << right << setw(25) << "" << "^^^^^^^^^^^^^^^^^^^ QUAN LY SAN BANH ^^^^^^^^^^^^^^^^^^^^" << endl;
 	cout << right << setw(26) << "*" << right << setw(56) << "*" <<  endl;
 	cout << right << setw(25) << "" << "*\t[1] Khach hang dat san" << right << setw(28) << "*" << setw(4) << " " << "+++++++++++++++++++++++++++" << endl;
@@ -185,6 +186,6 @@ void banner()
 	cout << right << setw(25) << "" << "+=====================================================+" << endl;
 	cout << right << setw(25) << "" << "\n\n";
 	cout << right << setw(25) << "" << "\tWELLCOME TO OUR SOCCER FIELD\n\n\n";
-	SetColor(5);
+	SetColor(154);
 	scan->inputPicture();
 }

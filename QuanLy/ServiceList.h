@@ -4,8 +4,8 @@
 #include <iomanip>
 #include <fstream>
 #include "RoomList.h"
-#include "Service.h"
-#include "Service.h"
+
+
 using namespace std;
 #define MAX 250
 char tam[MAX];
@@ -383,12 +383,16 @@ public:
 		int k, SoLuongNow, n;
 		string id;
 		RoomList* roomList = new RoomList();
+		Service* service = new Service();
+		int tiendichvu;
 
 	NHAPIDSERVICE:
 		try
 		{
 			cout << "Nhap ID cua service muon dat hang: ";
 			cin >> id;
+
+			transform(id.begin(), id.end(), id.begin(), toupper);
 			
 			int SoLuongNow = LaySoLuongHangDangCo(id);
 
@@ -397,15 +401,6 @@ public:
 			if (SoLuongNow <= 0)
 			{
 				cout << "Dich vu da het hang" << endl;
-				goto NHAPIDSERVICE;
-			}
-
-			cout << "Nhap so luong muon dat:";
-			cin >> n;
-
-			if (n > SoLuongNow)
-			{
-				cout << "So luong vuot qua so luong co trong kho" << endl;
 				goto NHAPIDSERVICE;
 			}
 			
@@ -422,9 +417,10 @@ public:
 				cout << "Nhap so luong: ";
 				cin >> n;
 
-				if (SoLuongNow < n)
+				if (n > SoLuongNow)
 				{
-					throw "So luong vuot qua so luong dang co";
+					cout << "So luong vuot qua so luong co trong kho" << endl;
+					goto NHAPIDSERVICE;
 				}
 			}
 			catch (const char* msg)
@@ -466,7 +462,9 @@ public:
 			cout << "Vui long nhap lai ID dich vu" << endl;
 			goto NHAPIDSERVICE;
 		}
-
+	   
 	}
 
 };
+
+

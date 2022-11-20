@@ -12,6 +12,7 @@ public:
 	RoomList* roomList;
 	Price* price;
 	ServiceList* serviceList;
+	Trade* trade;
 	class TradeNode {
 	public:
 		Trade data;
@@ -81,13 +82,13 @@ public:
 		{
 			return;
 		}
-		memset(t, '=', 210);
+		memset(t, '_', 176);
 		cout << t << endl;
 		cout << "|" << left << setw(15) << "   CMND/CCCD" << "|" << left << setw(20) << "\t\tHo va Ten";
 		cout << "|" << left << setw(16) << "  So Dien Thoai" << "|" << left << setw(12) << " Ngay Sinh" << "|" <<
-			left << setw(9) << "Gioi Tinh" << "|" << left << setw(48) << "\t      Dia chi" << "|" <<
+			left << setw(9) << "Gioi Tinh" << "|" << left << setw(14) << "\t Dia chi" << "|" <<
 			left << setw(26) << "    Ngay dat san" << "|" << left << setw(26) << "    Ngay tra san" << "|" << left << setw(11) << " Gia tien" << "|" << endl;
-		memset(t, '=', 210);
+		memset(t, '=', 176);
 		cout << t << endl;
 		while (!filein.eof())
 		{
@@ -104,7 +105,7 @@ public:
 			trade.dateIn.printDateTime();
 			trade.dateOut.printDateTime();
 			cout << " " << left << setw(10) << price << "|" << endl;
-			memset(t, '-', 210);
+			memset(t, '-', 176);
 			cout << t << endl;
 		}
 		memset(t, NULL, MAX);
@@ -141,7 +142,7 @@ public:
 			cout << left << setw(9) << temp->data.room.id;
 			temp->data.customer.printACustomer();
 			cout << endl;
-			memset(t, '-', 171);
+			memset(t, '-', 135);
 			cout << left << setw(10) << "" << t << endl;
 			temp = temp->next;
 		}
@@ -251,6 +252,7 @@ public:
 					cout << "Ngay tra san: ";
 					pDel->data.dateOut.printDateTime();
 					cout << endl;
+
 					memset(t, NULL, MAX);
 					memset(t, '=', 87);
 					cout << left << setw(10) << "" << t << endl;
@@ -325,6 +327,7 @@ public:
 	}
 	void CheckSan()
 	{
+
 		string idR;
 	NHAPMASAN:
 		try
@@ -332,7 +335,7 @@ public:
 			cout << "Nhap ma san muon tra:";
 			cin >> idR;
 			if (!(idR.length() == 4 && idR[0] == 'N' || idR[0] == 'M'))
-				throw "ID san phai co dang 'M' hoặc 'N'\n";
+				throw "ID da sai\n";
 			if (!roomList->IsExistRoom(idR))
 				throw "ID san khong ton tai\n";
 			if (!roomList->IsFullRoom(idR))
@@ -371,6 +374,8 @@ public:
 		{
 			cout << "Nhap loai san: ";
 			cin >> type;
+
+			type = toupper(type);
 			if (!(type == 'N' || type == 'M'))
 			{
 				cin.seekg(1);
@@ -399,8 +404,7 @@ public:
 			goto NHAPLAILOAISAN;
 		}
 		trade.dateIn.AutoSetDate();
-		trade.InitDateOut();/// cho date out = 0
-		//Nhập vào danh sách liên kết
+		trade.InitDateOut();
 		if (!customerList->IsExistId(trade.customer.id))
 		{
 			customerList->AddHead(customer);
