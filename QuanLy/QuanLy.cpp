@@ -57,19 +57,19 @@ void Menu(TradeList* tradeList)
 	SetColor(126);
 	cout << right << setw(2) << " " << "^^^^^^^^^^^^^^^^^^^^" << right << setw(6) << "" << "^^^^^^^^^^^^^^^^^^^ QUAN LY SAN BANH ^^^^^^^^^^^^^^^^^" << endl;
 	cout << right << setw(3) << "+" << "      Member      +" << right << setw(6) << "" << "*" << right << setw(53) << "*" << endl;
-	cout << right << setw(2) << " " << "+------------------+" << right << setw(6) << "" << "*\t[1] Dat san" << right << setw(39) << "*" << setw(4) << " " << "+++++++++++++++++++++++++++" << endl;
-	cout << right << setw(3) << "+" << " Tran Quang Thoi  +" << right << setw(6) << "" << "*\t[2] Tra san" << right << setw(39) << "*" << setw(4) << " " << "+                         +" << endl;
-	cout << right << setw(3) << "+" << " Huynh Bao Toan   +" << right << setw(6) << "" << "*\t[3] Tim kiem khach hang" << right << setw(27) << "*" << right << setw(5) << "+" << "\t Gia san 5  (N): 200K" << right << setw(4) << "+" << endl;
-	cout << right << setw(3) << "+" << " Cao Ngoc Quy     +" << right << setw(6) << "" << "*\t[4] Tim kiem khach hang dang thue san" << right << setw(13) << "*" << setw(5) << "+" << "\t Gia san 11 (M): 500K " << right << setw(3) << "+" << endl;
-	cout << right << setw(2) << " " << "++++++++++++++++++++" << right << setw(6) << "" << "*\t[5] Danh sach khach hang" << right << setw(26) << "*" << setw(4) << " " << "+                         +" << endl;
-	cout << right << setw(28) << "" << "*\t[6] Danh sach khach hang dang thue san" << right << setw(12) << "*" << setw(4) << " " << "+++++++++++++++++++++++++++" << endl;
-	cout << right << setw(28) << "" << "*\t[7] Danh sach lich su giao dich" << right << setw(19) << "*" << setw(17) << " " << "+" << endl;
-	cout << right << setw(28) << "" << "*\t[8] Danh sach san" << right << setw(33) << "*" << setw(15) << " " << "+   +" << endl;
-	cout << right << setw(28) << "" << "*\t[9] Danh sach cac san con trong" << right << setw(19) << "*" << setw(13) << " " << "+       +" << endl;
-	cout << right << setw(28) << "" << "*\t[10] Cap nhat them san" << right << setw(28) << "*" << setw(11) << " " << "+           +" << endl;
-	cout << right << setw(28) << "" << "*\t[11] Cap nhat lai gia san" << right << setw(25) << "*" << setw(4) << " " << "============================" << endl;
-	cout << right << setw(28) << "" << "*\t[12] Cap nhat trang thai san sau khi bao tri" << right << setw(6) << "*" << setw(4) << " " << "||||||||||||||||||||||||||||" << endl;
-	cout << right << setw(28) << "" << "*\t[13] So luong san cua san banh" << right << setw(20) << "*" << setw(4) << " " << "============================" << endl;
+	cout << right << setw(2) << " " << "+------------------+" << right << setw(6) << "" << "*\t[1] Dat san" << right << setw(39) << "*" << setw(4) << " " << "+++++++++++++++++++++++++++++++++++++" << endl;
+	cout << right << setw(3) << "+" << " Tran Quang Thoi  +" << right << setw(6) << "" << "*\t[2] Tra san" << right << setw(39) << "*" << setw(4) << " " << "+" << "\t Gia san 5  loai 1(N):" << tradeList->price->perHourNHang1<<"VND" << right << setw(3) << "+" << endl;
+	cout << right << setw(3) << "+" << " Huynh Bao Toan   +" << right << setw(6) << "" << "*\t[3] Tim kiem khach hang" << right << setw(27) << "*" << right << setw(5) << "+" << "\t Gia san 5  loai 2(N):" << tradeList->price->perHourNHang1 << "VND" << right << setw(3) << "+" << endl;
+	cout << right << setw(3) << "+" << " Cao Ngoc Quy     +" << right << setw(6) << "" << "*\t[4] Tim kiem khach hang dang thue san" << right << setw(13) << "*" << setw(5) << "+" << "\t Gia san 11 loai 1(M):" << tradeList->price->perHourMHang1 << "VND" << right << setw(3) << "+" << endl;
+	cout << right << setw(2) << " " << "++++++++++++++++++++" << right << setw(6) << "" << "*\t[5] Danh sach khach hang" << right << setw(26) << "*" << setw(4) << " " << "+" "\t Gia san 11 loai 2(M):"<< tradeList->price->perHourMHang2 << "VND" << right << setw(4) << "+" << endl;
+	cout << right << setw(28) << "" << "*\t[6] Danh sach khach hang dang thue san" << right << setw(12) << "*" << setw(4) << " " << "+++++++++++++++++++++++++++++++++++++" << endl;
+	cout << right << setw(28) << "" << "*\t[7] Danh sach lich su giao dich" << right << setw(19) << "*" << setw(22) << " " << "+" << endl;
+	cout << right << setw(28) << "" << "*\t[8] Danh sach san" << right << setw(33) << "*" << setw(20) << " " << "+   +" << endl;
+	cout << right << setw(28) << "" << "*\t[9] Danh sach cac san con trong" << right << setw(19) << "*" << setw(18) << " " << "+       +" << endl;
+	cout << right << setw(28) << "" << "*\t[10] Cap nhat them san" << right << setw(28) << "*" << setw(16) << " " << "+           +" << endl;
+	cout << right << setw(28) << "" << "*\t[11] Cap nhat lai gia san" << right << setw(25) << "*" << setw(4) << " " << "====================================" << endl;
+	cout << right << setw(28) << "" << "*\t[12] Cap nhat trang thai san sau khi bao tri" << right << setw(6) << "*" << setw(4) << " " << "||||||||||||||||||||||||||||||||||||" << endl;
+	cout << right << setw(28) << "" << "*\t[13] So luong san cua san banh" << right << setw(20) << "*" << setw(4) << " " << "====================================" << endl;
 	cout << right << setw(28) << "" << "*\t[14] Doanh thu trong ngay" << right << setw(25) << "*" << endl;
 	cout << right << setw(28) << "" << "*\t[15] Danh sach cac dich vu" << right << setw(24) << "*" << endl;
 	cout << right << setw(28) << "" << "*\t[16] Dat dich vu" << right << setw(34) << "*" << endl;
@@ -188,5 +188,5 @@ void banner()
 	cout << right << setw(25) << "" << "\n\n";
 	cout << right << setw(25) << "" << "\tWELLCOME TO OUR SOCCER FIELD\n\n\n";
 	SetColor(154);
-	scan->inputPicture();
+	/*scan->inputPicture();*/
 }

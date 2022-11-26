@@ -37,7 +37,9 @@ public:
 		{
 			cout << "Nhap ID cua san sau khi bao tri: ";
 			cin >> id;
-			if (!(id[0] == 'M' || id[0] == 'N' && id.length() == 4))
+			bool kt = (id[0] == 'M' || id[0] == 'N');
+			bool kt2 = (id[1] == '1' || id[1] == '2');
+			if (!((id.length() == 4 && kt) && kt2))
 				throw "ID san khong hop le";
 			RoomNode* roomnode = head;
 			while (roomnode != nullptr)
@@ -316,7 +318,9 @@ public:
 		{
 			cout << "Nhap ID cua san moi ";
 			cin >> room.id;
-			if (!(room.id[0] == 'M' || room.id[0] == 'N' && room.id.length() == 4))
+			bool kt = (room.id[0] == 'M' || room.id[0] == 'N');
+			bool kt2 = (room.id[1] == '1' || room.id[1] == '2');
+			if (!((room.id.length() == 4 && kt) && kt2))
 				throw "ID san khong hop le";
 			if (this->IsExistRoom(room.id))
 				throw "ID san da ton tai";
