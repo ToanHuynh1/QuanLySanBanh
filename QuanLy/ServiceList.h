@@ -451,7 +451,12 @@ public:
 
 					cout << "So luong sau khi cap nhat: " << (SoLuongNow - n) << endl;
 					UpdateState(id, (SoLuongNow - n));
-					fOutputServices();
+
+					tiendichvu = service->GetPriceService() * n;
+					ofstream fileout;
+					fileout.open("FILEGIATIEN.TXT", ios::out);
+           			fileout <<tiendichvu << endl;
+					fileout.close();
 					return;
 				}
 				servicenode = servicenode->next;

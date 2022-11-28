@@ -11,6 +11,7 @@ void SetColor(int color);
 void banner();
 void Option(int option, TradeList*& tradeList);
 Picture* scan = new Picture();
+string idtest;
 
 int main()
 {
@@ -136,8 +137,7 @@ void Option(int option, TradeList*& tradeList)
 		tradeList->serviceList->PrintServiceList();
 		break;
 	case 16:
-		int n;
-		tradeList->serviceList->UpdateDatDichVu();
+		tradeList->DatDichVu(idtest);
 		break;
 	case 0:
 		tradeList->DetroyTradeList();

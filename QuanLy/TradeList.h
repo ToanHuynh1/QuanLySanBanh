@@ -13,6 +13,7 @@ public:
 	Price* price;
 	ServiceList* serviceList;
 	Trade* trade;
+
 	class TradeNode {
 	public:
 		Trade data;
@@ -29,9 +30,7 @@ public:
 		customerList = new CustomerList();
 		roomList = new RoomList();
 		serviceList = new ServiceList();
-
 		price = new Price();
-
 		head = nullptr;
 		fInput();
 
@@ -334,7 +333,8 @@ public:
 		{
 			cout << "Nhap ma san muon tra:";
 			cin >> idR;
-			if (!(idR.length() == 4 && idR[0] == 'N' || idR[0] == 'M'))
+			bool kt = idR[1] == '1' || idR[1] == '2';
+			if (!(idR.length() == 4 && idR[0] == 'N' || idR[0] == 'M' && kt))
 				throw "ID da sai\n";
 			if (!roomList->IsExistRoom(idR))
 				throw "ID san khong ton tai\n";
@@ -454,6 +454,45 @@ public:
 			left << setw(9) << "Gioi Tinh" << "|" << left << setw(18) << " Dia chi" << "|" << endl;
 		memset(t, '=', 135);
 		cout << left << setw(11) << "" << t << endl;
+	}
+
+	void DatDichVu(string ID)
+	{
+		int tiendichvu;
+	NHAPMASAN:
+		try
+		{
+			cout << "Nhap ma muon dat dich vu:";
+			cin >> ID;
+			bool kt = ID[1] == '1' || ID[1] == '2';
+			if (!(ID.length() == 4 && ID[0] == 'N' || ID[0] == 'M' && kt))
+				throw "ID da sai\n";
+			if (!roomList->IsExistRoom(ID))
+				throw "ID san khong ton tai\n";
+			if (!roomList->IsFullRoom(ID))
+				throw "San nay khong co nguoi thue\n";
+			serviceList->UpdateDatDichVu();
+
+			ifstream filein;
+			filein.open("FILEGIATIEN.TXT", ios::in);
+	
+			filein >> tiendichvu;
+			filein.close();
+			cout << tiendichvu << endl;
+
+			ofstream fileout;
+			fileout.open("IDSANTIENDICHVU.TXT", ios::out);
+			fileout << ID << "," << tiendichvu << endl;
+			fileout.close();
+			cout << "|" << "Ma San" << "|" << "TienDichVu" << "|" << endl;
+			cout << "|" << ID << "|" << tiendichvu << "|" << endl;
+		}
+		catch (const char* msg)
+		{
+			cout << msg;
+			cout << "Vui long nhap lai\n";
+			goto NHAPMASAN;
+		}
 	}
 
 };
