@@ -102,7 +102,7 @@ void Option(int option, TradeList*& tradeList)
 		tradeList->searchName();
 		break;
 	case 5:
-		tradeList->customerList->printList();
+		tradeList->customerList->printListk();
 		break;
 	case 6:
 		tradeList->printTrade();

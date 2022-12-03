@@ -133,6 +133,7 @@ public:
 	}
 	void printTrade()
 	{
+		
 		TradeNode* temp = head;
 		printform();
 		while (temp != nullptr)

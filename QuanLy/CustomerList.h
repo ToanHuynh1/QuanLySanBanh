@@ -34,7 +34,17 @@ public:
 
 	}
 
-	
+	void sortName()
+	{
+		for (CustomerNode* pi =head; pi != NULL; pi = pi->next)
+			for (CustomerNode* pj = pi->next; pj != NULL; pj = pj->next)
+				if (pi->data.fullName.firstName.compare(pj->data.fullName.firstName) > 0)
+				{
+					Customer tmp = pi->data;
+					pi->data = pj->data;
+					pj->data = tmp;
+				}
+	}
 
 	void fOutputApp(Customer data)
 	{
@@ -300,6 +310,29 @@ public:
 		}
 		Form();
 		CustomerNode* temp = head;
+		while (temp != nullptr)
+		{
+			cout << left << setw(20) << "";
+			temp->data.printACustomer();
+			cout << endl;
+			memset(t, '-', 108);
+			cout << left << setw(21) << "" << t << endl;
+			temp = temp->next;
+		}
+		memset(t, NULL, MAX);
+	}
+	void printListk()
+	{
+		cout << endl;
+		if (this->head == nullptr)
+		{
+			cout << "Danh sach rong\n";
+			return;
+		}
+		
+		Form();
+		CustomerNode* temp = head;
+		sortName();
 		while (temp != nullptr)
 		{
 			cout << left << setw(20) << "";
