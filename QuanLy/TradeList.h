@@ -243,17 +243,16 @@ public:
 					cout << left << setw(9) << pDel->data.room.id;
 					pDel->data.customer.printACustomer();
 					cout << endl;
-					memset(t, '-', 171);
+					memset(t, '-', 136);
 					cout << left << setw(10) << "" << t << endl;
 					cout << left << setw(10) << "" << "|" << left << setw(15);
 					cout << "Ngay dat san: ";
-					pDel->data.dateIn.printDateTime();
+					pDel->data.dateIn.printDateTime();					
 					cout << "Ngay tra san: ";
-					pDel->data.dateOut.printDateTime();
+					pDel->data.dateOut.printDateTimek();
 					cout << endl;
-
 					memset(t, NULL, MAX);
-					memset(t, '=', 87);
+					memset(t, '=', 136);
 					cout << left << setw(10) << "" << t << endl;
 					memset(t, NULL, MAX);
 					break;

@@ -78,8 +78,15 @@ public:
 	{
 		string temp = to_string(hour) + ":" + to_string(minute) + ":" + to_string(second)
 			+ " " + to_string(day) + "/" + to_string(month) + "/" + to_string(year);
-		cout << " " << left << setw(25) << temp << "|";
+		cout << " " << left << setw(26) << temp << "|";
 	}
+	void  printDateTimek()
+	{
+		string temp = to_string(hour) + ":" + to_string(minute) + ":" + to_string(second)
+			+ " " + to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+		cout << " " << left << setw(77) << temp << "|";
+	}
+
 	void  printDate()
 	{
 		string temp = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
